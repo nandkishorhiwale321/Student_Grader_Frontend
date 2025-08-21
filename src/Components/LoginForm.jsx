@@ -52,7 +52,7 @@ const LoginForm = ({ onLogin, switchToSignup }) => {
         noValidate
         className="p-4 bg-white rounded shadow login-card"
       >
-        <h3 className="text-center mb-4">Student Login Portal</h3>
+        <h3 className="text-center mb-4" style={{color:"#007BFF", fontWeight:"bold"}}>Student Login</h3>
 
         <div className="form-group mb-3">
           <label htmlFor="email">Email</label>

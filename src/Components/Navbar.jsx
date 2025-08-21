@@ -6,6 +6,7 @@ const Navbar = ({
   onLogout,
   onLoginClick,
   onSignupClick,
+  onAdminClick
 }) => {
   return (
     <>
@@ -49,11 +50,11 @@ const Navbar = ({
                 <i className="fas fa-home fa-fw"></i> Home
               </a>
             </li>
-            <li className="sidenav-item">
-              <a href="#!">
+            {/* <li className="sidenav-item">
+              <a href="LoginForm.jsx">
                 <i className="fas fa-fire fa-fw"></i> Trending
               </a>
-            </li>
+            </li> */}
 
             {/* More links */}
           </ul>
@@ -77,13 +78,13 @@ const Navbar = ({
           <img src="logo.png" alt="" style={{ width: "20%" }} />
 
           <h5 className="student-slogan">
-            "Grades are just numbers, but learning is your superpower."
+            An inhouse training platform for students.
           </h5>
 
           <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
             {currentUserEmail ? (
               <>
-                <span>Welcome, {currentUserEmail}</span>
+                <span style={{fontWeight:"bold"}}>Welcome, {currentUserEmail}</span>
                 <button
                   className="btn btn-outline-danger btn-sm"
                   onClick={onLogout}
@@ -93,10 +94,19 @@ const Navbar = ({
               </>
             ) : (
               <>
-                <button class="b1">Admin Login</button>
+                <button
+                  className="b1"
+                  style={{ fontSize: "100%" }}
+                  onClick={onAdminClick} // ✅ now calls the App handler
+                >
+                  Admin Login
+                </button>
+                {/* <button class="b1" style={{fontSizoe:"100%"}} >Admin Login</button> */}
                 <button class="nav-btn1 login-btn1" onClick={onLoginClick}>
                   Login
                 </button>
+
+
                 <button class="nav-btn1 signup-btn1" onClick={onSignupClick}>
                   Signup
                 </button>
