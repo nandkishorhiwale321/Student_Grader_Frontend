@@ -46,7 +46,7 @@ const Navbar = ({
           </a>
           <ul className="sidenav-menu">
             <li className="sidenav-item">
-              <a href="app.jsx">
+              <a href="/">
                 <i className="fas fa-home fa-fw"></i> Home
               </a>
             </li>
