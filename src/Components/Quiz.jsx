@@ -22,7 +22,7 @@ function Quiz({ studentEmail }) {
     if (!studentEmail) return;
 
     axios
-      .get("http://localhost:8080/quiz/start", { params: { email: studentEmail } })
+      .get("studentgraderbackend-production-d49c.up.railway.app/quiz/start", { params: { email: studentEmail } })
       .then((response) => {
         setQuestions(response.data);
         setError("");
@@ -111,7 +111,7 @@ function Quiz({ studentEmail }) {
       isAutoSubmitRef.current = false;
 
       axios
-        .post(`http://localhost:8080/quiz/submit?email=${studentEmail}`, answers)
+        .post(`studentgraderbackend-production-d49c.up.railway.app/quiz/submit?email=${studentEmail}`, answers)
         .then(() => {
           setSubmitted(true);
           toast.success("✅ Quiz submitted successfully!", { position: "top-center" });
@@ -131,7 +131,7 @@ function Quiz({ studentEmail }) {
   const fetchScore = () => {
     setLoadingResults(true);
     axios
-      .get(`http://localhost:8080/students/score`, { params: { email: studentEmail } })
+      .get(`studentgraderbackend-production-d49c.up.railway.app/students/score`, { params: { email: studentEmail } })
       .then((res) => {
         setScore(res.data);
       })

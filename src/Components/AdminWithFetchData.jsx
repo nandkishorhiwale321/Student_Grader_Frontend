@@ -46,7 +46,7 @@ function AdminWithFetch() {
     setLoading(true);
     setError(null);
 
-    const url = "http://localhost:8080/admin/get-all-students";
+    const url = "studentgraderbackend-production-d49c.up.railway.app/admin/get-all-students";
     const basicAuth = "Basic " + btoa(currentUserEmail + ":" + password);
 
     fetch(url, {

@@ -18,7 +18,7 @@ const LoginForm = ({ onLogin, switchToSignup }) => {
       try {
         // Call backend login API
         const response = await axios.post(
-          "http://localhost:8080/students/login",
+          "studentgraderbackend-production-d49c.up.railway.app/students/login",
           values
         );
 
